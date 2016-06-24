@@ -1,22 +1,34 @@
-
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext);
 @font-face {
   font-family: caviar;
   src: url(../font/CaviarDreams_bold.ttf);
 }
-
+@font-face {
+  font-family: caviar_ib;
+  src: url(../font/CaviarDreams_boldItalic.ttf);
+}
 *{
   font-family: caviar;
 }
 html,body{
   padding: 0;
   margin: 0;
-
 }
-/*#B20000;
-  #FF1919;
-  #33FF6D;
-  #19FF5A;
-  #09B239;
+strong{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Oswald', sans-serif;
+}
+/*#73161E;-alertError
+  #D9414E;-danger
+  #644D73;
+  #568C59;-alertSuccess
+  #A6D95B;-primary
+  #F3BB45;-alertWarning
+  #66615B;-default
+  #68B3C8; info
 */
 .backimg{
   background-image: url("../img/log2.jpg");
@@ -27,68 +39,73 @@ html,body{
   width: 70%;
   height: 100%;
   right: 0;
-  z-index: 1;
-  opacity: .8;
+  z-index: -2;
+  /*opacity: .8;*/
 }
 .login{
   position: absolute;
-  left: 0;
   height: 100%;
   width: 30%;
-  z-index: 2;
+  z-index: 1;
 }
-input{
+.login input{
   display: block;
 }
-input[type=button]{
+button{
   transition: .5s;
-  margin: 15px auto;
-  border: 1px solid #91DC5A;
+  border: 1px solid #A6D95B;
   background-color: white;
-  color: grey;
+  color: #66615B;
   padding: 7px 30px;
-  text-transform: uppercase;
+  font-weight: bold;
 }
-input[type=button]:hover{
-  background-color: #91DC5A;
+.login button{
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+button:hover{
+  background-color: #A6D95B;
   color: white;
 }
 input[type=text],input[type=password]{
   transition: .5s;
   width: 70%;
   padding: 7px 10px;
-  margin: 15px auto;
   border: none;
-  border-bottom: 5px solid grey;
-  color: #91DC5A;
+  border-bottom: 5px solid #66615B;
+  color: #A6D95B;
+  margin: 20px auto;
 }
 input[type=text]:focus,input[type=password]:focus{
-  border-bottom: 5px solid #91DC5A;
+  border-bottom: 5px solid #A6D95B;
+  color: #66615B;
   outline: none;
 }
 .login a{
   transition: .2s;
-  color: grey;
-  text-decoration: none;
+  color: #66615B;
+  width: 70%;
   text-align: center;
-  display: block;
+  text-decoration: none;
+  display:block;
+  margin: 15px auto;
 }
 .login a:hover{
-  color: #91DC5A;
+  color: #A6D95B;
 }
 .logolog{
-  background-image: url("../img/coca.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 30%;
-  height: 20%;
+  position: relative;
+  display: block;
   margin: 30px auto;
+  width: 40%;
+  height: auto;
 }
 footer{
   width: 100%;
   height: 50px;
   text-align: center;
-  background: #91DC5A;
+  background: #A6D95B;
   position: absolute;
   bottom: 0;
   z-index: 3;
@@ -99,4 +116,26 @@ footer div{
 }
 .fa-heart{
   color: rgb(193, 30, 44);
+}
+/*Alertas*/
+#_AJAX_LOGIN_ span{
+  width: 50%;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+.alertError{
+  color: white;
+  padding: 5px 20px;
+  background-color: #D9414E;
+}
+.alertWarning{
+  color: black;
+  padding: 5px 20px;
+  background-color: #F3BB45;
+}
+.alertSuccess{
+  color: white;
+  padding: 5px 20px;
+  background-color: #568C59;
 }

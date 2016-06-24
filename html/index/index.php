@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-  </head>
-  <link rel="stylesheet" href="view/css/style.css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="view/font/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
-  <body>
 
+  <?php include('html/overall/header.html'); ?>
     <div class="backimg">
 
     </div>
     <div class="login">
-      <div class="logolog"></div>
+      <img src="view/img/coca.svg" alt="" class="logolog"/>
       <input type="text" id="user" placeholder="Cuenta"/>
       <input type="password" id="pass" placeholder="Contraseña"/>
-      <input type="button" id="login" value="Iniciar">
+      <button rol="button" id="login">Iniciar <i class="fa fa-sign-in"></i></button>
       <a href="?view=registro">Registrar!</a>
+
+      <div id='_AJAX_LOGIN_'>
+        <!-- <span class="alertSuccess">
+          <p>
+            <i class="fa fa-exclamation"></i> <strong>Error:</strong> Ocurrio un error.
+            <i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Espere...
+            <i class="fa fa-check"></i> <strong>Success:</strong> Bienvenido.
+          </p>
+        </span> -->
+      </div>
     </div>
 
-    <footer>
-      <div>
-        <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by ADSI 117
-      </div>
-    </footer>
 
-  </body>
-</html>
+  <?php include("html/overall/footer.php"); ?>
