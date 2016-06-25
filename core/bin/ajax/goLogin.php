@@ -9,7 +9,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   $sql = $db->query("SELECT * FROM usuarios WHERE (User = '$data' OR Correo = '$data') AND pass = '$pass' LIMIT 1;");
   if ($db->rows($sql) > 0) {
     if ($_POST['session']) { ini_set('session.cookie_lifetime', time() + (60*60*24));}
-    // $_SESSION['app_id'] = $db->recorrer($sql)[2];
+    $_SESSION['app_id'] = $db->recorrer($sql)[1];
     echo 1;
   } else {
     echo '<span class="alertError">

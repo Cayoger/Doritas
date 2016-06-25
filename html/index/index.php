@@ -9,7 +9,7 @@
       <input type="password" id="pass" placeholder="Contraseña"/>
       <input type="checkbox" id="rename"> Recordarme
       <button rol="button" id="login" onclick="goLogin()">Iniciar <i class="fa fa-sign-in"></i></button>
-      <a href="?view=registro">Registrar!</a>
+      <a href="?view=reg">Registrar!</a>
 
       <div id='_AJAX_LOGIN_'>
         <!-- <span class="alertInfo">
