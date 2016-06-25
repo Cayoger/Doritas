@@ -1,5 +1,5 @@
 <?php
-
+  //Core es el nucleo de programa
   require("core/core.php");
 
   if (isset($_GET['view'])) {

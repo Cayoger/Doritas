@@ -5,6 +5,7 @@ function goLogin(){
   session = __('rename').checked ? true : false;
   form = "user="+user+"&pass="+pass+"&session="+session;
   conexion = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+  //Aqui comienza el ajax
   conexion.onreadystatechange = function() {
     if (conexion.readyState == 4 && conexion.status == 200) {
       if (conexion.responseText == 1) {
@@ -28,7 +29,6 @@ function goLogin(){
   conexion.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion.send(form);
 }
-
 
 function pulseEnter(e){
   if (e.keyCode == 13) {

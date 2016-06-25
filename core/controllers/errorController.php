@@ -1,4 +1,4 @@
 <?php
 
-include("html/error/error.php");
+include("html/public/error.php");
  ?>

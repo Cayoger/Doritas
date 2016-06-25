@@ -1,5 +1,5 @@
 <?php
 
-  include('html/reg/reg.php');
+  include('html/public/reg.php');
 
 ?>
