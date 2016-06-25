@@ -13,7 +13,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   } else {
     echo '<span class="alertError">
           <p>
-          <i class="fa fa-exclamation"></i> <strong>Error:</strong> Los datos no corresponden a ningun usuario.
+          <i class="fa fa-exclamation"></i> <strong>Error:</strong> Escribiste mal la cuenta o la contraseña.
           </p>
           </span>';
   }

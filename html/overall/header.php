@@ -6,5 +6,6 @@
   </head>
   <link rel="stylesheet" href="view/css/style.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="view/font/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
+  <script src='view/js/jquery.min.js'></script>
   <script src='view/js/generales.js'></script>
   <body>

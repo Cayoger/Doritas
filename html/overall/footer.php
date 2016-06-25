@@ -1,7 +1,10 @@
 <footer>
   <div>
-    <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by ADSI 117 <?php echo APP_FOOTER; ?>
+     <?php echo APP_FOOTER; ?>
   </div>
 </footer>
+<script src='view/js/efectos.js'>
+
+</script>
 </body>
 </html>

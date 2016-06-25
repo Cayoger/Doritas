@@ -16,6 +16,7 @@ function goLogin(){
         window.location = "?view=on";
       } else {
         __('_AJAX_LOGIN_').innerHTML = conexion.responseText;
+        ocultarAlert();
       }
     } else if (conexion.readyState != 4) {
       result = '<span class="alertInfo">';
