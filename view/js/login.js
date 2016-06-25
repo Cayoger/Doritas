@@ -3,9 +3,8 @@ function goLogin(){
   user = __('user').value;
   pass = __('pass').value;
   session = __('rename').checked ? true : false;
-  console.log(session);
   form = "user="+user+"&pass="+pass+"&session="+session;
-  conexion = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXoObject('Microsoft.XMLHTTP');
+  conexion = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
   conexion.onreadystatechange = function() {
     if (conexion.readyState == 4 && conexion.status == 200) {
       if (conexion.responseText == 1) {

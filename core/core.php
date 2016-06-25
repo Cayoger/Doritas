@@ -11,5 +11,5 @@ define('DB_NAME','session');
 define('APP_FOOTER',' - Copyright &copy; ' . date('Y',time()));
 #Estructuras
 require("core/models/class.Conexion.php");
-require("core/bin/function/Encrypt.php")
+require("core/bin/function/Encrypt.php");
 ?>

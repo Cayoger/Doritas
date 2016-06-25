@@ -1,8 +1,6 @@
 
   <?php include('html/overall/header.html'); ?>
-    <div class="backimg">
-
-    </div>
+    <div class="backimg"></div>
     <div class="login" rol="form" onkeypress='return pulseEnter(event)'>
       <img src="view/img/coca.svg" alt="" class="logolog"/>
       <input type="text" id="user" placeholder="Cuenta"/>
@@ -10,7 +8,6 @@
       <input type="checkbox" id="rename"> Recordarme
       <button rol="button" id="login" onclick="goLogin()">Iniciar <i class="fa fa-sign-in"></i></button>
       <a href="?view=reg">Registrar!</a>
-
       <div id='_AJAX_LOGIN_'>
         <!-- <span class="alertInfo">
           <p>
@@ -22,8 +19,8 @@
         </span> -->
       </div>
     </div>
-    <script src='view/js/login.js'>
+    <form class="" action="index.html" method="post">
 
-    </script>
-
+    </form>
+    <script src='view/js/login.js'></script>
   <?php include("html/overall/footer.php"); ?>

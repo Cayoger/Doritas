@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6{
 }
 /*#73161E;-alertError
   #D9414E;-danger
-  #644D73;
+  #644D73;-nav
   #568C59;-alertSuccess
   #A6D95B;-primary
   #F3BB45;-alertWarning
@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6{
   height: 100%;
   right: 0;
   z-index: -2;
-  /*opacity: .8;*/
+  /*opacity: .7;*/
 }
 .login{
   position: absolute;
@@ -106,8 +106,7 @@ input[type=text]:focus,input[type=password]:focus{
   position: relative;
   display: block;
   margin: 30px auto;
-  width: 40%;
-  height: auto;
+  width: 35%;  height: auto;
 }
 footer{
   width: 100%;
