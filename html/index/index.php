@@ -1,5 +1,6 @@
 
   <?php include('html/overall/header.php'); ?>
+  <div id="conteiner">
     <div class="backimg"></div>
     <div class="login" rol="form" onkeypress='return pulseEnter(event)'>
       <img src="view/img/coca.svg" alt="" class="logolog"/>
@@ -18,6 +19,7 @@
           </p>
         </span> -->
       </div>
+    </div>
     </div>
     <script src='view/js/login.js'></script>
   <?php include("html/overall/footer.php"); ?>

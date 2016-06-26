@@ -5,10 +5,10 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   $db = new Conexion();
   $data = $db->real_escape_string($_POST['user']);
   $pass = Encrypt($_POST['pass']);
-  $sql = $db->query("SELECT * FROM usuarios WHERE (User = '$data' OR Correo = '$data') AND pass = '$pass' LIMIT 1;");
+  $sql = $db->query("SELECT * FROM usuario WHERE  email = '$data' AND passw = '$pass' LIMIT 1;");
   if ($db->rows($sql) > 0) {
     if ($_POST['session']) { ini_set('session.cookie_lifetime', time() + (60*60*24));}
-    $_SESSION['app_id'] = $db->recorrer($sql)[1];
+    $_SESSION['app_id'] = $db->recorrer($sql)[3];
     echo 1;
   } else {
     echo '<span class="alertError">

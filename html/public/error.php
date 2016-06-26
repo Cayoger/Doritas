@@ -1,10 +1,12 @@
-<?php
+<?php include('html/overall/header.php'); ?>
 
-include('html/overall/header.php');
 
-echo "Error 404 ";
-echo "<a href='?view=index'>redirecionar</a>";
+<div id="conteiner">
+  Error 404 - <a href='?view=index'>redirecionar</a>
+</div>
 
-include("html/overall/footer.php");
 
- ?>
+
+
+
+<?php include("html/overall/footer.php");  ?>
