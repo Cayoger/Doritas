@@ -11,20 +11,16 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
     $_SESSION['app_id'] = $db->recorrer($sql)[3];
     echo 1;
   } else {
-    echo '<span class="alertError">
-          <p>
+    echo '<div class="alert alert-danger" role="alert">
           <i class="fa fa-exclamation"></i> <strong>Error:</strong> Escribiste mal la cuenta o la contraseña.
-          </p>
-          </span>';
+          </div>';
   }
   $db->liberar($sql);
   $db->close();
 } else {
-    echo '<span class="alertWarning">
-          <p>
+    echo '<div class="alert alert-warning" role="alert">
           <i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Todos los campos deben de estar llenos.
-          </p>
-          </span>';
+          </div>';
 }
 
 
