@@ -1,4 +1,5 @@
 .footer{
+  display: none;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -23,11 +24,18 @@ footer div{
  width: 100%;
  height: 100%;
 }
+#_AJAX_LOGIN_{
+  margin: 80px 0;
+}
 .imgLogo{
   margin: 30px;
   width: 130px;
   height: auto;
 }
-#_AJAX_LOGIN_{
-  margin: 30px 0;
+.imgBrand{
+  width: 20px;
+  height: 20px;
+}
+#rowLogin{
+  padding-top: 30px; 
 }

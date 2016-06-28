@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <base href="<?php echo APP_URL ?>">
     <metaname="viewport"content="width=device-width, initial-scale=1">
     <title><?php echo APP_TITLE; ?></title>
   </head>
