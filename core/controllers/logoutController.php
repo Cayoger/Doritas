@@ -2,7 +2,7 @@
 
 
 
-unset($_SESSION['app']);
+unset($_SESSION['app_id']);
 header('location: ?view=index');
 
 

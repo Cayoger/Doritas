@@ -56,6 +56,7 @@ if($db->rows($sql) == 0) {
   $usuario = $db->recorrer($sql)[0];
   if(strtolower($email) == strtolower($usuario)){
     $HTML = '<span class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>ERROR:</strong> El email ya esta registrado.
             </span>';
   }

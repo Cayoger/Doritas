@@ -40,23 +40,28 @@ function goLog(tipo){
     term = check('term');
     if (!term) {
       result = '<div class="alert alert-warning" role="alert">';
+      result +='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
       result += '<i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Debes aceptar los terminos y condiciones.';
       result += '</div>';
     } else if (pass != pass2) {
       result = '<div class="alert alert-warning" role="alert">';
+      result +='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
       result += '<i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Contraseña distintas.';
       result += '</div>';
     } else {
       if (name.length === 0 || lname.length === 0) {
         result = '<div class="alert alert-warning" role="alert">';
+        result +='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         result += '<i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Campos vacios.';
         result += '</div>';
       } else if (pass.length === 0 || pass2.length === 0) {
         result = '<div class="alert alert-warning" role="alert">';
+        result +='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         result += '<i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Campos vacios.';
         result += '</div>';
       } else if (!/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
         result = '<div class="alert alert-warning" role="alert">';
+        result +='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         result += '<i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Campos vacios.';
         result += '</div>';
       } else {
@@ -69,19 +74,13 @@ function goLog(tipo){
               result = '<div class="alert alert-success" role="alert">';
               result += '<i class="fa fa-check"></i> <strong>Success:</strong> Registro exitoso.';
               result += '</div>';
-              __('_AJAX_LOGIN_').innerHTML = result;
-              ocultarAlert();
-
             } else {
               __('_AJAX_LOGIN_').innerHTML = conexion.responseText;
-              ocultarAlert();
             }
           } else if (conexion.readyState != 4) {
             result = '<div class="alert alert-info" role="alert">';
             result += '<i class="fa fa-spinner fa-pulse"></i> <strong>Prosesando...</strong>';
             result += '</div>';
-            __('_AJAX_LOGIN_').innerHTML = result;
-            ocultarAlert();
           }
         };
 
@@ -89,8 +88,9 @@ function goLog(tipo){
         conexion.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         conexion.send(form);
       }
-    }
+    }//fin del if term
     __('_AJAX_LOGIN_').innerHTML = result;
+    ocultarAlert();
   } else {
     console.log('Distinto tipo');
   }
