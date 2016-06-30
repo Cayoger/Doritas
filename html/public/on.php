@@ -1,18 +1,7 @@
 <?php
   if (isset($_SESSION['app_id'])) {
     include('html/overall/header.php');
-     if ($usr[$_SESSION['app_id']]['id_est'] == 0) {
-      echo '<div class="row">
-        <div class="col-lg-12">
-          <div class="alert alert-danger" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong><i class="fa fa-exclamation"></i> Alerta!</strong> Debes de activar tu cuenta o no podras disfrutar de nuestros servicios.
-          </div>
-        </div>
-      </div>';
-       }
-       include('html/overall/navbar.php');
-
+    include('html/overall/navbar.php');
 ?>
 <!-- === bienvenida === -->
   <div class="row">
@@ -31,12 +20,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
-            <img src="view/img/coca.svg" class='img-responsive img-circle' alt="" />
+            <img src="view/img/servicio1.gif" class='img-responsive img-circle' alt="" />
         </div>
         <div class="col-lg-10">
-          <h2>Estado: <small>Ultimo servicio</small>
-            <a href="?view=" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Nuevo</a>
-            <a href="?view=" class=""><i class="fa fa-eye p-x-5"></i></a>
+          <h2>Estado: <small> Correr</small>
+            <a href="?view=" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nuevo</a>
+            <a href="?view=" class="btn btn-default"><i class="fa fa-eye p-x-5"></i></a>
           </h2>
           <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-danger" style="width: 20%"></div>
@@ -46,7 +35,7 @@
             <div class="progress-bar progress-bar-success" style="width: 10%"></div>
           </div>
           <p>
-            loreasdasdsadasdjsadasdasd
+            Hay dias malos y bueno, pero en esos dias malos debes ser fuerte y levantarte, a menos de que te persiga un gran moustro hecho de tus oscuros pensamiento.
           </p>
         </div>
       </div>

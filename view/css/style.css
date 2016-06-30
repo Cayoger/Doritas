@@ -1,4 +1,7 @@
 
+.m-t-20{
+  margin-top: 20px;
+}
 .contImg{
   background-image: url('../img/bg.png');
   background-repeat: no-repeat;
