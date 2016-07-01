@@ -11,11 +11,11 @@
         require("core/bin/ajax/goReg.php");
         break;
       default:
-        header("location: index.php");
+        header("location: ?view=index");
         break;
     }
   } else {
-    header("location: index.php");
+    header("location: ?view=index");
   }
 
 

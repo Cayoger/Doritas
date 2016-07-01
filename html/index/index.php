@@ -1,6 +1,4 @@
 <?php include('html/overall/header.php'); ?>
-<div class="container-fluid">
-
   <div class="row">
     <div id='rowLogin' class="col-lg-4 col-md-4 col-sm-5 col-md-push-4 col-lg-push-4 text-center">
       <ul class="nav nav-tabs" role="tablist">

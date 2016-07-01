@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
- <div class="container-fluid">
+ <div class="container">
    <!-- inicio del view movil -->
    <div class="navbar-header">
      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuDoritas" aria-expanded="false">
@@ -42,7 +42,7 @@
            | <i class="fa fa-cogs"></i><span class="caret"></span>
          </a>
          <ul class="dropdown-menu">
-           <li><a href="?view=perfil">Cuenta</a></li>
+           <li><a href="?view=perfil"><i class="fa fa-cog"></i> Cuenta</a></li>
            <li role="separator" class="divider"></li>
            <li><a href="?view=logout"><i class="fa fa-sign-out"></i> Cerrar sesion</a></li>
          </ul>

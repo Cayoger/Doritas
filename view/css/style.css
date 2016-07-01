@@ -1,6 +1,9 @@
 
-.m-t-20{
-  margin-top: 20px;
+.m-t-50{
+  margin-top: 50px !important;
+}
+.m-t-70{
+  margin-top: 70px !important;
 }
 .contImg{
   background-image: url('../img/bg.png');
