@@ -47,7 +47,7 @@ if($db->rows($sql) == 0) {
     // $fecha_reg = date('d/m/Y', time());
     $sql_2 = $db->query("SELECT MAX(id) AS id FROM `usuario`;");
     $nid = $db->recorrer($sql_2)[0];
-    $db->query("INSERT INTO `usuario` (`id`, `id_per`, `nom_usr`, `ape_usr`, `email`, `passw`, `keyreg`) VALUES ('".($nid+1)."','0','$name','$lname','$email','$pass','$keyreg')");
+    $db->query("INSERT INTO `usuario` (`id`, `nom_usr`, `ape_usr`, `email`, `passw`, `keyreg`) VALUES ('".($nid+1)."','$name','$lname','$email','$pass','$keyreg')");
     $_SESSION['app_id'] = $db->recorrer($sql_2)[0];
     $db->liberar($sql_2);
     $HTML = 1;
@@ -55,10 +55,10 @@ if($db->rows($sql) == 0) {
 } else {
   $usuario = $db->recorrer($sql)[0];
   if(strtolower($email) == strtolower($usuario)){
-    $HTML = '<span class="alert alert-danger" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $HTML = '<div class="alert alert-danger" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>ERROR:</strong> El email ya esta registrado.
-            </span>';
+            </div>';
   }
 }
 

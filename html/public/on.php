@@ -1,5 +1,4 @@
 <?php
-  if (isset($_SESSION['app_id'])) {
     include('html/overall/header.php');
     include('html/overall/navbar.php');
 ?>
@@ -91,7 +90,4 @@
 
  <?php
      include("html/overall/footer.php");
-   } else {
-     header("location: index.php");
-   }
   ?>
