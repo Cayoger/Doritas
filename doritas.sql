@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2016 a las 17:41:40
+-- Tiempo de generación: 01-07-2016 a las 17:24:42
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -28,20 +28,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `catalogo` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(45) DEFAULT NULL COMMENT 'Nombre del paquete'
+  `descripcion` varchar(45) DEFAULT NULL COMMENT 'Nombre del paquete',
+  `val_h` double DEFAULT NULL,
+  `val_h_add` double DEFAULT NULL,
+  `num_h` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Paquetes de servicios';
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `catalogo_detalle`
+-- Volcado de datos para la tabla `catalogo`
 --
 
-CREATE TABLE `catalogo_detalle` (
-  `id` int(11) NOT NULL,
-  `id_cat` int(11) DEFAULT NULL COMMENT 'Id de tabla catalogo',
-  `id_ser` int(11) DEFAULT NULL COMMENT 'Id tabla servicio'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Relaciona un paquete de catalogo con los servicios empaquetados';
+INSERT INTO `catalogo` (`id`, `descripcion`, `val_h`, `val_h_add`, `num_h`) VALUES
+(1, 'Paquete 4H', 15000, 20000, 4),
+(2, 'Paquete 5H', 12000, 20000, 5);
 
 -- --------------------------------------------------------
 
@@ -1299,13 +1298,13 @@ CREATE TABLE `orden_trabajo` (
   `id_cli` int(11) DEFAULT NULL COMMENT 'Id de usuario cliente',
   `id_res` int(11) DEFAULT NULL COMMENT 'Id usuario responsable',
   `usr_ver` int(11) DEFAULT NULL COMMENT 'Usuario que verifica la orden.',
-  `id_est` int(11) DEFAULT NULL COMMENT 'Id estado de orden',
+  `id_est` int(11) DEFAULT '1' COMMENT 'Id estado de orden',
   `id_cat` int(11) DEFAULT NULL COMMENT 'Id catalogo',
   `dir_ser` varchar(60) DEFAULT NULL COMMENT 'Direccion del sevicio',
   `fec_reg` datetime DEFAULT NULL COMMENT 'Fecha registro orden',
   `fec_ser` datetime DEFAULT NULL COMMENT 'Fecha hora de servicio',
   `fec_ver` datetime DEFAULT NULL COMMENT 'Fecha hora de verificada.',
-  `ciudad` int(11) DEFAULT NULL
+  `ciudad` int(11) DEFAULT '1004'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Ordenes de trabajo ';
 
 -- --------------------------------------------------------
@@ -1363,25 +1362,6 @@ CREATE TABLE `permiso` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `servicio`
---
-
-CREATE TABLE `servicio` (
-  `id` int(11) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL COMMENT 'Descripcion de servicio es empaquetado.'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Servicios empaquetados en catalogo';
-
---
--- Volcado de datos para la tabla `servicio`
---
-
-INSERT INTO `servicio` (`id`, `descripcion`) VALUES
-(0, '4 Horas'),
-(1, '5 Horas');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tipo_permiso`
 --
 
@@ -1399,12 +1379,12 @@ CREATE TABLE `tipo_permiso` (
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `id_per` int(11) DEFAULT '0' COMMENT 'Id de perfil que tiene usuario',
-  `tip_doc` int(11) DEFAULT NULL COMMENT 'Tipo documento',
+  `tip_doc` int(11) DEFAULT '0' COMMENT 'Tipo documento',
   `num_doc` varchar(20) DEFAULT NULL COMMENT 'Numero documento',
   `nom_usr` varchar(60) DEFAULT NULL COMMENT 'Nombre de usuario',
   `ape_usr` varchar(60) DEFAULT NULL COMMENT 'Aprllido de usuario',
-  `tel_usr` varchar(12) DEFAULT NULL COMMENT 'Telefono de usuario',
-  `cel_usr` varchar(12) DEFAULT NULL COMMENT 'Celular de usuario',
+  `tel_usr` varchar(12) DEFAULT '0' COMMENT 'Telefono de usuario',
+  `cel_usr` varchar(12) DEFAULT '0' COMMENT 'Celular de usuario',
   `pais` int(11) DEFAULT '1',
   `depto` int(11) DEFAULT '76',
   `ciu_usr` int(11) DEFAULT '1004',
@@ -1420,8 +1400,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `id_per`, `tip_doc`, `num_doc`, `nom_usr`, `ape_usr`, `tel_usr`, `cel_usr`, `pais`, `depto`, `ciu_usr`, `dir_usr`, `id_est`, `email`, `passw`, `keyreg`) VALUES
-(0, 3, 0, '1143845021', 'Jhonathan Steven', 'Calderon Sanchez', '0', '3022095243', 1, 76, 1004, 'Calle 37 # 11 c 05', 1, 'jscalderon120@misena.edu.co', 'c0784027b45aa11e848a38e890f8416c', '0'),
-(1, 0, NULL, NULL, 'Diego', 'Suarez', NULL, NULL, 1, 76, 1004, NULL, 1, 'jhonatan19921209@gmail.com', 'c0784027b45aa11e848a38e890f8416c', '0');
+(0, 3, 1, '1143845021', 'Jhonathan Steven', 'Calderon Sanchez', '0', '3022095243', 1, 76, 1004, 'Calle 37 # 11 c 05', 1, 'jscalderon120@misena.edu.co', 'c0784027b45aa11e848a38e890f8416c', '0'),
+(1, 0, 0, NULL, 'Diego', 'Suarez', NULL, NULL, 1, 76, 1004, NULL, 1, 'jhonatan19921209@gmail.com', 'c0784027b45aa11e848a38e890f8416c', '0'),
+(2, 0, 0, NULL, 'Nuri', 'Medina', '0', '0', 1, 76, 1004, NULL, 0, 'jhonathan19920912@outlook.com', '93b7e6b5686823d8bfe468745eb41acd', '61aa272d6b805b1f3994c93dabb764f8');
 
 --
 -- Índices para tablas volcadas
@@ -1432,14 +1413,6 @@ INSERT INTO `usuario` (`id`, `id_per`, `tip_doc`, `num_doc`, `nom_usr`, `ape_usr
 --
 ALTER TABLE `catalogo`
   ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `catalogo_detalle`
---
-ALTER TABLE `catalogo_detalle`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_servicio_idx` (`id_ser`),
-  ADD KEY `fk_catalogo_idx` (`id_cat`);
 
 --
 -- Indices de la tabla `ciudad`
@@ -1483,9 +1456,9 @@ ALTER TABLE `orden_trabajo`
   ADD KEY `fk_cliente_idx` (`id_cli`),
   ADD KEY `fk_responsable_idx` (`id_res`),
   ADD KEY `fk_estado_orden_idx` (`id_est`),
-  ADD KEY `fk_paquete_catlogo_idx` (`id_cat`),
   ADD KEY `fk_auditor_idx` (`usr_ver`) USING BTREE,
-  ADD KEY `fk_ciudad_servicio_idx` (`ciudad`) USING BTREE;
+  ADD KEY `fk_ciudad_servicio_idx` (`ciudad`) USING BTREE,
+  ADD KEY `fk_id_catalogo_idx` (`id_cat`);
 
 --
 -- Indices de la tabla `pais`
@@ -1506,12 +1479,6 @@ ALTER TABLE `permiso`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_permiso_perfil_idx` (`id_per`),
   ADD KEY `fk_tipo_permiso_idx` (`tipo_per`);
-
---
--- Indices de la tabla `servicio`
---
-ALTER TABLE `servicio`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tipo_permiso`
@@ -1535,6 +1502,11 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `catalogo`
+--
+ALTER TABLE `catalogo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT de la tabla `orden_trabajo`
 --
 ALTER TABLE `orden_trabajo`
@@ -1542,13 +1514,6 @@ ALTER TABLE `orden_trabajo`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `catalogo_detalle`
---
-ALTER TABLE `catalogo_detalle`
-  ADD CONSTRAINT `fk_catalogo` FOREIGN KEY (`id_cat`) REFERENCES `catalogo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_servicio` FOREIGN KEY (`id_ser`) REFERENCES `servicio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `ciudad`
@@ -1577,7 +1542,7 @@ ALTER TABLE `orden_trabajo`
   ADD CONSTRAINT `fk_ciudad_servicio` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_cliente` FOREIGN KEY (`id_cli`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_estado_orden` FOREIGN KEY (`id_est`) REFERENCES `estados_ord` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_paquete_catlogo` FOREIGN KEY (`id_cat`) REFERENCES `catalogo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_id_catalogo` FOREIGN KEY (`id_cat`) REFERENCES `catalogo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_responsable` FOREIGN KEY (`id_res`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

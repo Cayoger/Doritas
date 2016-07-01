@@ -46,9 +46,8 @@ if($db->rows($sql) == 0) {
   } else {
     // $fecha_reg = date('d/m/Y', time());
     $sql_2 = $db->query("SELECT MAX(id) AS id FROM `usuario`;");
-    $nid = $db->recorrer($sql_2)[0];
-    $db->query("INSERT INTO `usuario` (`id`, `nom_usr`, `ape_usr`, `email`, `passw`, `keyreg`) VALUES ('".($nid+1)."','$name','$lname','$email','$pass','$keyreg')");
-    $_SESSION['app_id'] = $db->recorrer($sql_2)[0];
+    $_SESSION['app_id'] = ($db->recorrer($sql_2)[0]) + 1;
+    $db->query("INSERT INTO `usuario` (`id`, `nom_usr`, `ape_usr`, `email`, `passw`, `keyreg`) VALUES ('".$_SESSION['app_id']."','$name','$lname','$email','$pass','$keyreg')");
     $db->liberar($sql_2);
     $HTML = 1;
   }

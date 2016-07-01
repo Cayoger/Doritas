@@ -83,6 +83,7 @@ function goLog(tipo){
               result += '<i class="fa fa-check"></i> <strong>Success:</strong> Registro exitoso.';
               result += '</div>';
               __('_AJAX_LOGIN_').innerHTML = result;
+              window.location = "?view=on";
             } else {
               __('_AJAX_LOGIN_').innerHTML = conexion.responseText;
             }
