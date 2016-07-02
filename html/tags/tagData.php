@@ -10,9 +10,9 @@
     <div class="form-group">
       <label for="inputTypeDocument" class="col-lg-3 control-label">Tipo de documento</label>
       <div class="col-lg-5">
-        <select class="form-control">
+        <select class="form-control" id='tipo_doc'>
           <?php
-          if ($usr[$_SESSION['app_id']]['tip_doc'] == 0) {
+          if ($usr[$_SESSION['app_id']]['type_doc'] == 0) {
             echo '<option value="0">Documento</option>';
             echo '<option value="1">C.C.</option>';
             echo '<option value="2">NIT</option>';
@@ -35,9 +35,9 @@
       <div class="col-lg-5">
         <?php
           if ($usr[$_SESSION['app_id']]['num_doc'] == null) {
-            echo '<input type="text" class="form-control" placeholder="Numero documento">';
+            echo '<input type="text" id="numb_doc" class="form-control" placeholder="Numero documento">';
           } else {
-            echo '<input value="'.$usr[$_SESSION['app_id']]['num_doc'].'" type="text" class="form-control" placeholder="Numero documento">';
+            echo '<input id="numb_doc" value="'.$usr[$_SESSION['app_id']]['num_doc'].'" type="text" class="form-control" placeholder="Numero documento">';
           }
          ?>
       </div>
@@ -47,9 +47,9 @@
       <div class="col-lg-5">
         <?php
           if ($usr[$_SESSION['app_id']]['nom_usr'] == null) {
-            echo '<input type="text" class="form-control" placeholder="Nombre">';
+            echo '<input type="text" class="form-control" id="name" placeholder="Nombre">';
           } else {
-            echo '<input value="'.$usr[$_SESSION['app_id']]['nom_usr'].'" type="text" class="form-control" placeholder="Numero documento">';
+            echo '<input value="'.$usr[$_SESSION['app_id']]['nom_usr'].'" id="name" type="text" class="form-control" placeholder="Numero documento">';
           }
          ?>
       </div>
@@ -59,16 +59,16 @@
       <div class="col-lg-5">
         <?php
           if ($usr[$_SESSION['app_id']]['ape_usr'] == null) {
-            echo '<input type="text" class="form-control" placeholder="Apellido">';
+            echo '<input type="text" id="lname" class="form-control" placeholder="Apellido">';
           } else {
-            echo '<input value="'.$usr[$_SESSION['app_id']]['ape_usr'].'" type="text" class="form-control" placeholder="Numero documento">';
+            echo '<input value="'.$usr[$_SESSION['app_id']]['ape_usr'].'" id="lname" type="text" class="form-control" placeholder="Numero documento">';
           }
          ?>
       </div>
     </div>
     <hr>
     <div class="col-lg-3 col-lg-offset-5">
-      <button type="button" class='btn btn-success'>Actualizar <i class="fa fa-floppy-o"></i></button>
+      <button type="button" id="updateD" class='btn btn-success'>Actualizar <i class="fa fa-floppy-o"></i></button>
     </div>
   </div>
 <!-- fin cuerpo panel -->
