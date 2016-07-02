@@ -23,7 +23,7 @@
         </div>
         <div class="col-lg-10">
           <h2>Estado: <small> Correr</small>
-            <a href="?view=" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nuevo</a>
+            <a href="?view=new" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nuevo</a>
             <a href="?view=" class="btn btn-default"><i class="fa fa-eye p-x-5"></i></a>
           </h2>
           <div class="progress progress-striped active">
