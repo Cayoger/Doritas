@@ -12,18 +12,18 @@
       <div class="col-lg-5">
         <select class="form-control" id='tipo_doc'>
           <?php
-          if ($usr[$_SESSION['app_id']]['type_doc'] == 0) {
-            echo '<option value="0">Documento</option>';
-            echo '<option value="1">C.C.</option>';
-            echo '<option value="2">NIT</option>';
-          } else if ($usr[$_SESSION['app_id']]['tip_doc'] == 1) {
-              echo '<option value="0">Documento</option>';
-              echo '<option value="1" selected="selected">C.C.</option>';
-              echo '<option value="2">NIT</option>';
+          if ($usr[$_SESSION['app_id']]['type_doc'] == '0') {
+            echo '<option value="doc">Documento</option>';
+            echo '<option value="cc">C.C.</option>';
+            echo '<option value="nit">NIT</option>';
+          } else if ($usr[$_SESSION['app_id']]['tip_doc'] == '1') {
+            echo '<option value="doc">Documento</option>';
+            echo '<option value="cc" selected="selected">C.C.</option>';
+            echo '<option value="nit">NIT</option>';
           } else {
-              echo '<option value="0">Documento</option>';
-              echo '<option value="1">C.C.</option>';
-              echo '<option value="2" selected="selected">NIT</option>';
+            echo '<option value="doc">Documento</option>';
+            echo '<option value="cc">C.C.</option>';
+            echo '<option value="nit" selected="selected">NIT</option>';
           }
 
           ?>

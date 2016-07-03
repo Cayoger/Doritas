@@ -45,6 +45,7 @@
           <li class=""><a href="#account" data-toggle="tab"><i class="fa fa-cog"></i> Cuenta</a></li>
           <li class="disabled"><a><i class="fa fa-credit-card"></i> Pago</a></li>
         </ul>
+        <div id="_AJAX_PERFIL_"></div>
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane fade active in" id="data">
             <?php include 'html/tags/tagData.php'; ?>
@@ -59,6 +60,7 @@
             <?php include 'html/tags/tagData.php'; ?>
           </div>
         </div>
+
       </div>
     </div>
 </div>
