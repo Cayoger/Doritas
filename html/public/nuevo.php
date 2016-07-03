@@ -32,7 +32,7 @@ include('html/overall/navbar.php');
                       </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                   <label for="inputDireccion" class="col-lg-3 control-label">Dirección de servicio</label>
                   <div class="col-lg-5">
@@ -45,7 +45,7 @@ include('html/overall/navbar.php');
                      ?>
                   </div>
                 </div>
-                
+
                 <div class="form-group">
                   <label for="inputPais" class="col-lg-3 control-label">Fecha de servicio</label>
                   <div class="col-lg-5">
@@ -59,10 +59,10 @@ include('html/overall/navbar.php');
                     <input type="time" class="form-control" id="ho_servicio">
                   </div>
                 </div>
-
+                
               </div>
               <div class="col-sm-12 col-lg-6">
-                
+
                 <div class="form-group">
                   <label for="">Nota adicional</label>
                   <textarea name="" rows="5" class="form-control" id="nota_servicio"></textarea>
@@ -72,7 +72,7 @@ include('html/overall/navbar.php');
                   <button type="button" class='btn btn-success' id="boton_ordenar">Ordenar  <i class="fa fa-floppy-o"></i></button>
                 </div>
 
-                
+
 
               </div>
             </div>
@@ -80,7 +80,7 @@ include('html/overall/navbar.php');
 
           <div class="row center">
             <div id="alertar">
-                  
+
             </div>
           </div>
 
@@ -91,7 +91,7 @@ include('html/overall/navbar.php');
     </div>
 
     <script src="view/js/nueva_orden.js">
-      
+
     </script>
 
 <?php

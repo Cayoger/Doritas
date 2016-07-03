@@ -2,7 +2,7 @@
 function ocultarAlert(){
   $("#_AJAX_LOGIN_ div").fadeOut(15000);
   $("#_AJAX_PERFIL_ div").fadeOut(15000);
-  $("#alertar").fadeOut(15000);
+  // $("#alertar").fadeOut(15000);
 }
 
 $('#log a').click(function (e) {

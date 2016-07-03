@@ -10,6 +10,9 @@
       case 'reg':
         require("core/bin/ajax/goReg.php");
         break;
+      case 'news':
+        require("core/bin/ajax/goNews.php");
+        break;
       case 'datos':
         require("core/bin/ajax/goReg.php");
         break;

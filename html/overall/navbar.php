@@ -23,7 +23,7 @@
          <ul class="dropdown-menu">
            <li class="dropdown-header">Servicios</li>
            <li role="separator" class="divider"></li>
-           <li><a href="#">Nuevo</a></li>
+           <li><a href="?view=new">Nuevo</a></li>
            <li><a href="#">Pedidos</a></li>
            <!-- <li><a href="#">Something else here</a></li>
            <li role="separator" class="divider"></li>

@@ -6,9 +6,9 @@ date_default_timezone_set('America/Bogota');
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','db_doritas');
+define('DB_NAME','doritas');
 #Constantes de la APP
-define('APP_URL','http://localhost/repositorygh/Doritas/');
+define('APP_URL','http://localhost/Doritas/');
 define('APP_TITLE','Doritas S.A.S.');
 define('APP_FOOTER','<i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by ADSI 117 - Copyright &copy; ' . date('Y',time()));
 #constantes de phpmailer
