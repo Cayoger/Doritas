@@ -36,6 +36,14 @@
      <!-- fin left -->
      <!-- right -->
      <ul class="nav navbar-nav navbar-right">
+       <li class="active"><a><span class="fa fa-bell"></span>
+        <?php if ($usr[$_SESSION['app_id']]['cel_usr'] == 0|| $usr[$_SESSION['app_id']]['tel_usr'] == 0) {
+          echo '<span class="badge">1</span></a></a>';
+        } else {
+          echo '<span class="badge"></span></a></a>';
+        }?>
+
+       </li>
        <li class="dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
            <?php echo $usr[$_SESSION['app_id']]['nom_usr']." ".$usr[$_SESSION['app_id']]['ape_usr']; ?>

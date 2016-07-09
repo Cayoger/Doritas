@@ -42,7 +42,8 @@
         <ul class="nav nav-tabs">
           <li class="active"><a href="#data" data-toggle="tab"><i class="fa fa-user"></i> Datos</a></li>
           <li class=""><a href="#contact" data-toggle="tab"><i class="fa fa-map-marker"></i> Contacto</a></li>
-          <li class=""><a href="#account" data-toggle="tab"><i class="fa fa-cog"></i> Cuenta</a></li>
+          <li class="disabled"><a><i class="fa fa-cog"></i> Cuenta</a></li>
+          <!-- href="#account" data-toggle="tab" -->
           <li class="disabled"><a><i class="fa fa-credit-card"></i> Pago</a></li>
         </ul>
         <div id="_AJAX_PERFIL_"></div>

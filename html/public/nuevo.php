@@ -59,7 +59,7 @@ include('html/overall/navbar.php');
                     <input type="time" class="form-control" id="ho_servicio">
                   </div>
                 </div>
-                
+
               </div>
               <div class="col-sm-12 col-lg-6">
 

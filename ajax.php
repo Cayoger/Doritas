@@ -14,7 +14,13 @@
         require("core/bin/ajax/goNews.php");
         break;
       case 'datos':
-        require("core/bin/ajax/goReg.php");
+        require("core/bin/ajax/goData.php");
+        break;
+      case 'location':
+        require("core/bin/ajax/goAddress.php");
+        break;
+      case 'acount':
+        require("core/bin/ajax/goAcount.php");
         break;
       default:
         header("location: ?view=index");
