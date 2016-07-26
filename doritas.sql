@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2016 a las 17:24:42
+-- Tiempo de generación: 11-07-2016 a las 00:22:15
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -1304,8 +1304,16 @@ CREATE TABLE `orden_trabajo` (
   `fec_reg` datetime DEFAULT NULL COMMENT 'Fecha registro orden',
   `fec_ser` datetime DEFAULT NULL COMMENT 'Fecha hora de servicio',
   `fec_ver` datetime DEFAULT NULL COMMENT 'Fecha hora de verificada.',
-  `ciudad` int(11) DEFAULT '1004'
+  `ciudad` int(11) DEFAULT '1004',
+  `nota` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Ordenes de trabajo ';
+
+--
+-- Volcado de datos para la tabla `orden_trabajo`
+--
+
+INSERT INTO `orden_trabajo` (`id`, `id_cli`, `id_res`, `usr_ver`, `id_est`, `id_cat`, `dir_ser`, `fec_reg`, `fec_ser`, `fec_ver`, `ciudad`, `nota`) VALUES
+(1, 2, NULL, NULL, 1, 2, 'calle 37 # 11 c 07', '2016-07-10 16:54:20', '2016-07-31 10:00:00', NULL, 1004, 'Necesito limpio hasta el fundillo');
 
 -- --------------------------------------------------------
 
@@ -1401,8 +1409,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `id_per`, `tip_doc`, `num_doc`, `nom_usr`, `ape_usr`, `tel_usr`, `cel_usr`, `pais`, `depto`, `ciu_usr`, `dir_usr`, `id_est`, `email`, `passw`, `keyreg`) VALUES
 (0, 3, 1, '1143845021', 'Jhonathan Steven', 'Calderon Sanchez', '0', '3022095243', 1, 76, 1004, 'Calle 37 # 11 c 05', 1, 'jscalderon120@misena.edu.co', 'c0784027b45aa11e848a38e890f8416c', '0'),
-(1, 0, 0, NULL, 'Diego', 'Suarez', NULL, NULL, 1, 76, 1004, NULL, 1, 'jhonatan19921209@gmail.com', 'c0784027b45aa11e848a38e890f8416c', '0'),
-(2, 0, 0, NULL, 'Nuri', 'Medina', '0', '0', 1, 76, 1004, NULL, 0, 'jhonathan19920912@outlook.com', '93b7e6b5686823d8bfe468745eb41acd', '61aa272d6b805b1f3994c93dabb764f8');
+(2, 0, 0, NULL, 'Nuri', 'Medina', '9876543210', '123456', 1, 76, 1004, '', 0, 'jhonathan19920912@outlook.com', '93b7e6b5686823d8bfe468745eb41acd', '61aa272d6b805b1f3994c93dabb764f8'),
+(3, 1, 1, '1234567', 'Larry', 'Holguin Valencia', '3864506', '3022095243', 1, 76, 1004, 'Calle 37 # 11 c 05', 0, 'jhonatan19921209@gmail.com', '93b7e6b5686823d8bfe468745eb41acd', 'fdb73ccac5933e4892e9be0d87861215');
 
 --
 -- Índices para tablas volcadas
@@ -1510,7 +1518,7 @@ ALTER TABLE `catalogo`
 -- AUTO_INCREMENT de la tabla `orden_trabajo`
 --
 ALTER TABLE `orden_trabajo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --

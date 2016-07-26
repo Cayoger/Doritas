@@ -3,7 +3,7 @@
     include('html/overall/navbar.php');
 ?>
 <!-- === bienvenida === -->
-  <div class="row m-t-50">
+  <div class="row">
     <div class="col-lg-12">
       <div class="container">
         <div class="page-header">

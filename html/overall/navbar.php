@@ -16,22 +16,49 @@
    <div class="collapse navbar-collapse" id="menuDoritas">
      <ul class="nav navbar-nav">
        <!-- left -->
-       <li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-           Cliente <span class="caret"></span>
-         </a>
-         <ul class="dropdown-menu">
-           <li class="dropdown-header">Servicios</li>
-           <li role="separator" class="divider"></li>
-           <li><a href="?view=new">Nuevo</a></li>
-           <li><a href="#">Pedidos</a></li>
-           <!-- <li><a href="#">Something else here</a></li>
-           <li role="separator" class="divider"></li>
-           <li><a href="#">Separated link</a></li>
-           <li role="separator" class="divider"></li>
-           <li><a href="#">One more separated link</a></li> -->
-         </ul>
-       </li>
+       <?php
+        if ($usr[$_SESSION['app_id']]['id_per'] == 1) {
+          # Asociado
+          echo '
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Cliente <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Servicios</li>
+              <li role="separator" class="divider"></li>
+              <li><a href="?view=new">Nuevo</a></li>
+              <li><a href="?view=">Pedidos</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Asociarte <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="?view=nPro">Mirar Propuestas</a></li>
+              <li><a href="?view=vPro">Ver tus propuestas</a></li>
+            </ul>
+          </li>';
+        } else if ($usr[$_SESSION['app_id']]['id_per'] == 2) {
+          # Validador
+        } else if ($usr[$_SESSION['app_id']]['id_per'] == 3) {
+          # Admin
+        } else {
+          # cliente
+          echo '<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Cliente <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Servicios</li>
+              <li role="separator" class="divider"></li>
+              <li><a href="?view=new">Nuevo</a></li>
+              <li><a href="?view=">Pedidosa</a></li>
+            </ul>
+          </li>';
+        }
+        ?>
      </ul>
      <!-- fin left -->
      <!-- right -->
@@ -70,7 +97,7 @@
 </nav>
 <?php
 if ($usr[$_SESSION['app_id']]['id_est'] == 0) {
- echo '<div class="row">
+ echo ' <div class="row m-t-50">
    <div class="col-lg-12">
      <div class="alert alert-danger" role="alert">
        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
