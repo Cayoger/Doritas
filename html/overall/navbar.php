@@ -27,8 +27,8 @@
             <ul class="dropdown-menu">
               <li class="dropdown-header">Servicios</li>
               <li role="separator" class="divider"></li>
-              <li><a href="?view=new">Nuevo</a></li>
-              <li><a href="?view=">Pedidos</a></li>
+              <li><a href="?view=nPed">Nuevo</a></li>
+              <li><a href="?view=vPed">Pedidos</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -53,8 +53,8 @@
             <ul class="dropdown-menu">
               <li class="dropdown-header">Servicios</li>
               <li role="separator" class="divider"></li>
-              <li><a href="?view=new">Nuevo</a></li>
-              <li><a href="?view=">Pedidosa</a></li>
+              <li><a href="?view=nPed">Nuevo pedido</a></li>
+              <li><a href="?view=vPed">Lista de pedidos</a></li>
             </ul>
           </li>';
         }
@@ -85,9 +85,9 @@
      </ul>
      <form class="navbar-form navbar-right" role="search">
        <div class="input-group">
-         <input type="text" class="form-control" placeholder="Buscar...">
+         <input type="text" class="form-control" placeholder="Buscar..." disabled>
          <span class="input-group-btn">
-           <button class="btn btn-info" type="button"><i class="fa fa-search"></i></button>
+           <button class="btn btn-info" type="button" disabled><i class="fa fa-search"></i></button>
          </span>
        </div>
      </form>

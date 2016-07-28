@@ -4,7 +4,7 @@
 ?>
 <!-- === bienvenida === -->
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 m-t-70">
       <div class="container">
         <div class="page-header">
           <h2>¡Hola, <?php echo $usr[$_SESSION['app_id']]['nom_usr']." ".$usr[$_SESSION['app_id']]['ape_usr']; ?>! <small>Bienvenid(a)</small></h2>
