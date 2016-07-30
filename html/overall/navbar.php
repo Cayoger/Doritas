@@ -41,9 +41,40 @@
             </ul>
           </li>';
         } else if ($usr[$_SESSION['app_id']]['id_per'] == 2) {
-          # Validador
+          # Auditor
+          echo '<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Cliente <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Servicios</li>
+              <li role="separator" class="divider"></li>
+              <li><a href="?view=nPed">Nuevo pedido</a></li>
+              <li><a href="?view=vPed">Lista de pedidos</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Auditor <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="?view=nPro">Mirar Propuestas</a></li>
+              <li><a href="?view=vPro">Ver tus propuestas</a></li>
+            </ul>
+          </li>';
         } else if ($usr[$_SESSION['app_id']]['id_per'] == 3) {
           # Admin
+          echo '<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Cliente <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Servicios</li>
+              <li role="separator" class="divider"></li>
+              <li><a href="?view=nPed">Nuevo pedido</a></li>
+              <li><a href="?view=vPed">Lista de pedidos</a></li>
+            </ul>
+          </li>';
         } else {
           # cliente
           echo '<li class="dropdown">

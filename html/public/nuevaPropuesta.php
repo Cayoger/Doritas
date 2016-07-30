@@ -1,6 +1,5 @@
 <?php include 'html/overall/header.php'; ?>
 <?php include 'html/overall/navbar.php'; ?>
-
 <div class="container">
   <div class="row m-t-70">
     <div class="col-lg-12">
@@ -25,5 +24,4 @@
       </div>
     </div>
   </div>
-
 <?php include 'html/overall/footer.php'; ?>

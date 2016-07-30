@@ -1,28 +1,41 @@
 <?php
 
+class GoLogin {
 
-if (!empty($_POST['user']) && !empty($_POST['pass'])) {
-  $db = new Conexion();
-  $data = $db->real_escape_string($_POST['user']);
-  $pass = Encrypt($_POST['pass']);
-  $sql = $db->query("SELECT id FROM usuario WHERE  email = '$data' AND passw = '$pass' LIMIT 1;");
-  if ($db->rows($sql) > 0) {
-    if ($_POST['session']) { ini_set('session.cookie_lifetime', time() + (60*60*24));}
-    $_SESSION['app_id'] = $db->recorrer($sql)[0];
+  public $email;
+  public $pass;
+  public $session;
+  public $html;
 
-    echo 1;
-  } else {
-    echo '<div class="alert alert-danger" role="alert">
-          <i class="fa fa-exclamation"></i> <strong>Error:</strong> Escribiste mal la cuenta o la contraseña.
-          </div>';
+  public function __construct($email, $pass,$session) {
+    $this->email = $email;
+    $this->pass = $pass;
+    $this->session = $session;
   }
-  $db->liberar($sql);
-  $db->close();
-} else {
-    echo '<div class="alert alert-warning" role="alert">
-          <i class="fa fa-exclamation-triangle"></i> <strong>Warning:</strong> Todos los campos deben de estar llenos.
-          </div>';
+
+  public function login() {
+    $db = new Conexion();
+    $this->email = $db->real_escape_string($this->email);
+    $this->pass = Encrypt($this->pass);
+    $sql = $db->query("SELECT id FROM usuario WHERE  email = '$this->email' AND passw = '$this->pass' LIMIT 1;");
+    if ($db->rows($sql) > 0) {
+      if ($this->session) { ini_set('session.cookie_lifetime', time() + (60*60*24));}
+      $_SESSION['app_id'] = $db->recorrer($sql)[0];
+      $this->html = 1;
+    } else {
+      $this->html = '<div class="alert alert-danger" role="alert">
+            <i class="fa fa-exclamation"></i> <strong>Error:</strong> Escribiste mal la cuenta o la contraseña.
+            </div>';
+    }
+    $db->liberar($sql);
+    $db->close();
+  }
+
+  public function __destruct() {
+    echo $this->html;
+  }
 }
+
 
 
  ?>
