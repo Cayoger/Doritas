@@ -59,7 +59,7 @@ __('updateL').onclick = function() {
   dept = v('departamento');
   city = v('cuidad');
 
-  console.log(tel+' '+cel+' '+dir+' '+pais+' '+dept+' '+city);
+  // console.log(tel+' '+cel+' '+dir+' '+pais+' '+dept+' '+city);
 
   if (tel.length === 0 && cel.length === 0) {
     result = '<div class="alert alert-warning" role="alert">';
